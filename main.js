@@ -1,7 +1,13 @@
 import _ from 'lodash';
 
-const greeting = () => {
-  console.log('Hello world!');
-  console.log('lodash version:', _.VERSION);
+const convertArrayToObject = (array) => {
+  const mapped = _.keyBy(array, 'id');
+  return mapped;
 };
-greeting();
+
+const array = [
+  {id: 'a', name: 'Foo'},
+  {id: 'b', name: 'Bar'},
+];
+console.log('original:', array);
+console.log('converted:', convertArrayToObject(array));
