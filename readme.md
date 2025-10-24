@@ -1,8 +1,3 @@
-# HTML/JS starter template
+# HTML/JS harjoitukset viikko 1
 
-Valmis pohja JS-harjoituksiin
-
-- prettier conf
-- eslint conf
-
-Opettajan esimerkki.
+Opettajan esimerkkejä.
