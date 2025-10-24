@@ -1,8 +1,8 @@
 # HTML/JS starter template
 
-Valmis pohja JS-harjoituksiin
+Opettajan valmis mallipohja JS-harjoituksiin (`main`-haara).
 
 - prettier conf
 - eslint conf
 
-Opettajan esimerkki.
+Lisää esimerkkikoodeja löytyy tämän repositorion muista haaroista (branch).
