@@ -29,7 +29,7 @@ const todoList = [
 
 const ul = document.querySelector('ul');
 
-todoList.forEach((item) => {
+todoList.forEach(item => {
   let li = document.createElement('li');
 
   let checkbox = document.createElement('input');
@@ -42,12 +42,28 @@ todoList.forEach((item) => {
   label.htmlFor = `todo-${item.id}`;
   // console.dir(label);
 
-  label.addEventListener('click', () => {
-    alert('Klikkasit minua!!!');
+  // event handling for item clicks (step 1)
+  li.addEventListener('click', event => {
+    // console.log('klikkasit:', event.target);
+    item.completed = event.target.checked;
+    //console.log('todo list', todoList);
   });
 
   li.appendChild(checkbox);
   li.appendChild(label);
   ul.appendChild(li);
-});
 
+  // step 4: add delete button
+  const delButton = document.createElement('button');
+  delButton.textContent = 'X';
+  li.appendChild(delButton);
+  delButton.addEventListener('click', () => {
+    // etsittään poistettavan itemin indeksi vertaamalla eventin itemi
+    // taulukon itemeihin
+    const indexOfdeletedItem = todoList.findIndex(arrayItem => arrayItem == item);
+    const deletedItem = todoList.splice(indexOfdeletedItem, 1);
+    console.log('poistettu:', deletedItem, 'päivitetty lista', todoList);
+    // päivitetään käyttöliittymä
+    ul.removeChild(li);
+  });
+});
